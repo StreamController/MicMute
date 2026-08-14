@@ -1,0 +1,24 @@
+{
+    "plugin": {
+        "description": "Mutes and unmutes the microphone, and shows on the key whether it is currently muted.",
+        "requirements": "PulseAudio or PipeWire with the PulseAudio interface."
+    },
+    "actions": {
+        "ToggleMute": {
+            "description": "Toggles the microphone between muted and unmuted. The key shows the current state by itself: a red background and a crossed out microphone while muted.",
+            "settings": {
+                "all": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Mute every microphone instead of a single one. Set this to true and leave device out unless a specific microphone is meant."
+                },
+                "device": {
+                    "type": "string",
+                    "default": null,
+                    "description": "The microphone to mute, by its PulseAudio device nickname. Ignored when all is true; without either of them the action does nothing.",
+                    "example": "Yeti Stereo Microphone"
+                }
+            }
+        }
+    }
+}
